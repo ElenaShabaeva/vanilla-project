@@ -18,11 +18,6 @@ task("copy", () => {
         .pipe(dest("./build/public"))
 })
 
-task("jsCopy", () => {
-    return src("./src/js/vendor/**/*.js")
-        .pipe(dest("./build/js"))
-})
-
 task("clean", () => {
     return src("./build", {
         allowEmpty: true
@@ -80,13 +75,12 @@ task("watch", () => {
     watch("./src/style/**/*.scss", series("style"));
     watch("./src/pug/views/**/*.pug", series("pug"));
     watch("./src/js/main.js", series("webpack"));
-    watch("./src/js/vendor/**/*.js", series("jsCopy"));
 });
 
 task(
     "serve",
     series(
         "clean",
-        parallel("copy", "jsCopy", "style", "webpack", "pug", "watch", "server")
+        parallel("copy", "style", "webpack", "pug", "watch", "server")
     )
 );
