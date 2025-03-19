@@ -1,0 +1,104 @@
+.accordion{
+    box-sizing: border-box;
+    max-width: 940px;
+    width: 100%;
+    padding: 32px 48px 32px 52px;
+    background-color: var(--card-color);
+    border-radius: 32px;
+
+    &:not(.accordion--active){
+        &:hover{
+            @media(hover: hover){
+                .accordion__title{
+                    color: var(--ultramarine-default-color);
+                }
+            }
+        }
+    }
+
+    &--active{
+        background-color: var(--ultramarine-default-color);
+    }
+
+    &__btn{
+        position: relative;
+        border-radius: 16px;
+        margin-left: auto;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--gray-color-2);
+        width: 48px;
+        height: 48px;
+        transition: background-color 0.2s;
+
+        &::before,
+        &::after{
+            position: absolute;
+            content: '';
+            width: 20px;
+            height: 1px;
+            background-color: var(--ultramarine-default-color);
+            right: 14px;
+            top: 23px;
+            transition: rotate 0.3s;
+        }
+
+        &::after{
+            rotate: 90deg;
+        }
+    }
+
+    &__details{
+        &[open]{
+            .accordion__btn{
+                background-color: var(--text-contrast-blind-color);
+                
+                &::before,
+                &::after{
+                    background-color: var(--text-contrast-color);
+                }
+                
+                &::after{
+                    rotate: 0deg;
+                }
+            }
+
+            .accordion__title{
+                color: var(--text-contrast-color);
+            }
+
+            & + .accordion__content{
+                grid-template-rows: 1fr;
+            }
+
+        }
+    }
+
+    &__title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: color 0.3s;
+        position: relative;
+    }
+
+    &__summary{
+        list-style: none;
+    }
+
+    &__content{
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: 0.3s;
+    }
+
+    &__content-inner{
+        overflow: hidden;
+    }
+
+    &__content-body{
+        position: relative;
+        margin-top: 32px;
+        color: var(--text-contrast-secondary-color);
+    }
+}

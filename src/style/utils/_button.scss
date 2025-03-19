@@ -1,0 +1,37 @@
+@mixin btn {
+    display: inline-flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s,
+        border-radius 0.2s;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+@mixin btn-square {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    border-radius: 16px;
+
+    &-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    @include mobile{
+        border-radius: 12px;
+        width: 40px;
+        height: 40px;
+    }
+}

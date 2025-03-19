@@ -1,0 +1,38 @@
+@mixin btn-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    transition: background-color 0.3s, color 0.3s;
+
+    &-icon {
+        color: var(--text-secondary-promo-color);
+        width: 16px;
+        height: 16px;
+        transition: color 0.3s;
+    }
+
+    &:hover {
+        @media (hover: hover) {
+            background-color: var(--gray-color-4);
+            border-radius: 12px;
+
+            .btn__menu-icon {
+                color: var(--text-color);
+            }
+        }
+    }
+
+    &:active {
+        color: var(--ultramarine-dark-color);
+
+        .btn__menu-icon {
+            color: var(--ultramarine-dark-color);
+        }
+    }
+
+    @include mobile {
+        background-color: var(--gray-color-4);
+        border-radius: 12px;
+    }
+}

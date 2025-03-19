@@ -1,0 +1,25 @@
+.pagination{
+    @include btn-square;
+
+    &:hover {
+        @media (hover: hover) {
+            background-color: var(--gray-color-5);
+        }
+    }
+
+    &--active {
+        background-color: var(--gray-color-5);
+    }
+
+    &--disabled{
+        color: var(--text-blind-color);
+        pointer-events: none;
+    }
+}
+
+.paginations{
+    display: flex;
+    gap: 20px;
+    color: black;
+    align-items: center;
+}

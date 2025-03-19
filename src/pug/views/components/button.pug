@@ -1,0 +1,72 @@
+button(class="btn btn__color button") button 
+button(class="btn btn__color button btn__color--disabled") disabled 
+
+button(class="btn btn__border button") button 
+button(class="btn btn__border button btn__border--disabled") disabled   
+
+button(class="btn btn__headline text-h1") Headline
+    div.btn__headline-block
+        svg.btn__headline-icon
+            include ../../../public/svg/arrow-down-right.svg
+button(class="btn btn__headline btn__headline--disabled text-h1") Headline
+    div.btn__headline-block
+        svg.btn__headline-icon
+            include ../../../public/svg/arrow-down-right.svg
+
+button(class="btn btn__menu button") menu-item
+    svg.btn__menu-icon
+        include ../../../public/svg/arrow-down.svg
+
+button(class="btn btn__square")
+    svg.btn__square-icon
+        include ../../../public/svg/arrow-right.svg
+button(class="btn btn__square btn__square--disabled")
+    svg.btn__square-icon
+        include ../../../public/svg/arrow-right.svg
+
+button(class="btn btn__icons button")
+    svg.btn__icons-icon
+        include ../../../public/svg/arrow-top-right.svg
+    span button
+    svg.btn__icons-icon
+        include ../../../public/svg/arrow-top-right.svg
+button(class="btn btn__icons btn__icons--disabled button")
+    svg.btn__icons-icon
+        include ../../../public/svg/arrow-top-right.svg
+    span button
+    svg.btn__icons-icon
+        include ../../../public/svg/arrow-top-right.svg
+
+button(class="btn btn__color btn__color-white button") button 
+button(class="btn btn__color btn__color-white button btn__color-white--disabled") disabled 
+
+button(class="btn btn__square btn__square-white", id="js-favorite")
+    svg(class="btn__square-icon btn__square-icon")
+        include ../../../public/svg/bookmark.svg
+
+button(class="btn btn__square btn__square-white")
+    svg.btn__square-icon
+        include ../../../public/svg/arrow-right.svg
+button(class="btn btn__square btn__square-white--disabled")
+    svg.btn__square-icon
+        include ../../../public/svg/arrow-right.svg
+
+button(class="btn btn__square btn__square-video btn__square-white")
+    svg.btn__square-icon
+        include ../../../public/svg/player-play.svg
+button(class="btn btn__square btn__square-video btn__square-white--disabled")
+    svg.btn__square-icon
+        include ../../../public/svg/player-play.svg
+
+button(class="btn btn__color btn__color-white button") 
+    svg.btn__color-white-icon
+        include ../../../public/svg/pen.svg
+    span button 
+    svg.btn__color-white-icon
+        include ../../../public/svg/plus.svg
+button(class="btn btn__color btn__color-white btn__color-white--disabled button") 
+    svg.btn__color-white-icon
+        include ../../../public/svg/pen.svg
+    span button 
+    svg.btn__color-white-icon
+        include ../../../public/svg/plus.svg

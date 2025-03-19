@@ -1,0 +1,66 @@
+@mixin btn-headline {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    gap: 32px;
+
+    @include mobile {
+        gap: 20px;
+    }
+
+    &-icon {
+        width: 32px;
+        height: 32px;
+        transition: transform 0.3s, color 0.3s;
+
+        @include mobile {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &-block {
+        display: flex;
+        width: 56px;
+        height: 56px;
+        background-color: var(--card-color);
+        color: var(--ultramarine-default-color);
+        border-radius: 16px;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+
+        @include mobile {
+            border-radius: 12px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &:hover {
+        .btn__headline-icon {
+            transform: rotate(45deg);
+        }
+        .btn__headline-block {
+            background-color: var(--ultramarine-default-color);
+            color: var(--card-color);
+        }
+    }
+
+    &:active {
+        .btn__headline-block {
+            background-color: var(--ultramarine-dark-color);
+        }
+    }
+
+    &--disabled {
+        color: var(--text-blind-color);
+        pointer-events: none;
+
+        .btn__headline-block {
+            color: var(--text-blind-color);
+            border: 1px solid var(--border-color);
+            background-color: transparent;
+        }
+    }
+}

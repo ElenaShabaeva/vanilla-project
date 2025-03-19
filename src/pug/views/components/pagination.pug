@@ -1,0 +1,26 @@
+mixin pagination(currentPage, totalPage)
+    div(class="paginations", id="js-pagination")
+        button.btn.btn__square--rotate.pagination(data-page="prev", class=((currentPage === 1) ? 'pagination--disabled' : ""))
+            svg.btn__square-icon
+                include ../../../public/svg/arrow-right.svg
+        
+        - var visiblePage = 2;
+        - var startPage = (currentPage - visiblePage > 1) ? (currentPage - visiblePage) : 1;
+        - var endPage = currentPage + visiblePage < totalPage ? currentPage + visiblePage : totalPage;
+
+        if startPage > 1
+            button.btn.pagination.body(data-page = 1) 1
+            if startPage > 2
+                button.btn.pagination.pagination--disabled.body(data-ellipsis="start") ...
+        
+        - for (var i = startPage; i <= endPage; i++)
+            button.btn.pagination.body(data-page = i, class=(currentPage === i ? 'pagination--active' : ""))= i 
+        
+        if endPage < totalPage
+            if endPage < totalPage - 1
+                button.btn.pagination.pagination--disabled.body(data-ellipsis="end") ...
+            button.btn.pagination.body(type="button", data-page = totalPage)= totalPage
+        
+        button(class="btn btn__square pagination", disabled=(currentPage === totalPage), data-page="next")
+            svg.btn__square-icon
+                include ../../../public/svg/arrow-right.svg

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&display=swap');
+
+html {
+    --Onest: "Onest", sans-serif;
+    --Inter: "Inter", sans-serif;
+}
+
+.text-h1 {
+    @include text-h1;
+}
+.text-h2 {
+    @include text-h2;
+}
+.text-h3 {
+    @include text-h3;
+}
+.text-h4 {
+    @include text-h4;
+}
+.text-accent {
+    @include text-accent;
+}
+
+.button {
+    @include button;
+}
+
+.tab {
+    @include tab;
+}
+
+.body {
+    @include body;
+}
+.body-bold {
+    @include body-bold;
+}
+.body-small {
+    @include body-small;
+}
+.body-small-bold {
+    @include body-small-bold;
+}
+
+.caption {
+    @include caption;
+}

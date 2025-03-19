@@ -1,8 +1,22 @@
 doctype html
 html
   head 
+    meta(name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no")
     link(rel="stylesheet", href="./style/main.css")
 body 
-    h1 Настройка проекта
+    div.components 
+      h1 Настройка проекта
+      include components/button.pug
+      include components/tab.pug
+
+      include components/pagination.pug
+      +pagination(1, 12)
+
+      include components/tag.pug
+      include components/link.pug
+
+      include components/file.pug
+      include components/input.pug
+      include components/accordion.pug
 
     script(src="./js/app.min.js")

@@ -1,0 +1,43 @@
+.file{
+  display: flex;
+  gap: 20px;
+  max-width: 440px;
+  color: var(--ultramarine-default-color);
+
+  @include mobile{
+    max-width: 350px;
+    gap: 16px;
+
+    .file__block{
+      gap: 12px;
+    }
+  }
+
+  &__svg-hover{
+    display: none;
+  }
+
+  &__block{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__text{
+    color: var(--text-secondary-promo-color);
+  }
+
+  &:hover{
+    @media(hover: hover){
+      .file__title{
+        text-decoration: underline;
+      }
+      .file__svg-hover{
+        display: block;
+      }
+      .file__svg-default{
+        display: none;
+      }
+    }
+  }
+}

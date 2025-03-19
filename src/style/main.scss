@@ -1,6 +1,18 @@
-h1{
-    font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;
-    color: purple;
-}
+@use "global/normalize.css";
+
+@import "global/base";
+@import "global/colors";
+@import "global/breakpoints";
+@import "utils/typography";
+@import "global/typography";
+@import "utils/button";
+
+@import "components/button";
+@import "components/tab";
+@import "components/pagination";
+@import "components/tag";
+@import "components/link";
+@import "components/file";
+@import "components/input";
+@import "components/accordion";
 

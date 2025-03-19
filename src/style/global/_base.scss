@@ -1,0 +1,17 @@
+html {
+    font-size: 62.5%;
+}
+
+body{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 16px;
+    background-color: var(--app-bg);
+    color: var(--text-color);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+}
