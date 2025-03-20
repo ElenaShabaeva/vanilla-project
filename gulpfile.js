@@ -14,16 +14,14 @@ const clean = require("gulp-clean");
 const browserSync = require("browser-sync").create();
 
 task("copy", () => {
-    return src("./src/public/**/*")
-        .pipe(dest("./build/public"))
-})
+    return src("./src/public/**/*").pipe(dest("./build/public"));
+});
 
 task("clean", () => {
     return src("./build", {
-        allowEmpty: true
-    })
-        .pipe(clean())
-})
+        allowEmpty: true,
+    }).pipe(clean());
+});
 
 task("style", () => {
     return src("./src/style/**/*.scss")
@@ -63,10 +61,11 @@ task("webpack", () => {
         .pipe(webpackStream(webpackConfig, webpack))
         .pipe(dest("./build/js"))
         .pipe(terser())
-        .pipe(rename(function (path) 
-        {
-            path.basename += ".min";
-        }))
+        .pipe(
+            rename(function (path) {
+                path.basename += ".min";
+            })
+        )
         .pipe(dest("./build/js"))
         .pipe(browserSync.stream());
 });

@@ -927,7 +927,8 @@ html {
   position: absolute;
   content: "";
   width: 20px;
-  height: 1px;
+  height: 2px;
+  border-radius: 3px;
   background-color: var(--ultramarine-default-color);
   right: 14px;
   top: 23px;
@@ -1111,6 +1112,20 @@ html {
     height: 20px;
     top: 20px;
     right: 20px;
+  }
+  .accordion {
+    padding: 24px 20px 24px 24px;
+    max-width: 350px;
+  }
+  .accordion .accordion__btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
+  }
+  .accordion .accordion__btn::before, .accordion .accordion__btn::after {
+    width: 14px;
+    right: 7px;
+    top: 15px;
   }
 }
 @media (hover: hover){

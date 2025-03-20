@@ -1,4 +1,4 @@
-.accordion{
+.accordion {
     box-sizing: border-box;
     max-width: 940px;
     width: 100%;
@@ -6,21 +6,38 @@
     background-color: var(--card-color);
     border-radius: 32px;
 
-    &:not(.accordion--active){
-        &:hover{
-            @media(hover: hover){
-                .accordion__title{
+    @include mobile {
+        padding: 24px 20px 24px 24px;
+        max-width: 350px;
+        .accordion__btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 12px;
+
+            &::before,
+            &::after{
+                width: 14px;
+                right: 7px;
+                top: 15px;
+            }
+        }
+    }
+
+    &:not(.accordion--active) {
+        &:hover {
+            @media (hover: hover) {
+                .accordion__title {
                     color: var(--ultramarine-default-color);
                 }
             }
         }
     }
 
-    &--active{
+    &--active {
         background-color: var(--ultramarine-default-color);
     }
 
-    &__btn{
+    &__btn {
         position: relative;
         border-radius: 16px;
         margin-left: auto;
@@ -32,49 +49,49 @@
         transition: background-color 0.2s;
 
         &::before,
-        &::after{
+        &::after {
             position: absolute;
-            content: '';
+            content: "";
             width: 20px;
-            height: 1px;
+            height: 2px;
+            border-radius: 3px;
             background-color: var(--ultramarine-default-color);
             right: 14px;
             top: 23px;
             transition: rotate 0.3s;
         }
 
-        &::after{
+        &::after {
             rotate: 90deg;
         }
     }
 
-    &__details{
-        &[open]{
-            .accordion__btn{
+    &__details {
+        &[open] {
+            .accordion__btn {
                 background-color: var(--text-contrast-blind-color);
-                
+
                 &::before,
-                &::after{
+                &::after {
                     background-color: var(--text-contrast-color);
                 }
-                
-                &::after{
+
+                &::after {
                     rotate: 0deg;
                 }
             }
 
-            .accordion__title{
+            .accordion__title {
                 color: var(--text-contrast-color);
             }
 
-            & + .accordion__content{
+            & + .accordion__content {
                 grid-template-rows: 1fr;
             }
-
         }
     }
 
-    &__title{
+    &__title {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -82,21 +99,21 @@
         position: relative;
     }
 
-    &__summary{
+    &__summary {
         list-style: none;
     }
 
-    &__content{
+    &__content {
         display: grid;
         grid-template-rows: 0fr;
         transition: 0.3s;
     }
 
-    &__content-inner{
+    &__content-inner {
         overflow: hidden;
     }
 
-    &__content-body{
+    &__content-body {
         position: relative;
         margin-top: 32px;
         color: var(--text-contrast-secondary-color);
