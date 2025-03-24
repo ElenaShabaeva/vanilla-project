@@ -1,0 +1,35 @@
+article.event-card(id="js-event-card") 
+    div.event-card__top
+        picture.event-card__picture 
+            img(src="/assets/images/event1.jpg" alt="img").event-card__img
+        div.event-card__block
+            div.event-card__date 
+                span.event-card__date-num.text-h2 30
+                span.event-card__date-mon.body-small сен
+            button(class="btn btn__square btn__square-white", id="js-favorite")
+                svg(class="btn__square-icon btn__square-icon")
+                    include ../../../assets/svg/bookmark.svg
+    div.event-card__info 
+        div.event-card__marks
+            div.tag.tag--16.tag--science.button(id="js-tag") Наука
+            div.event-card__time 
+                svg.event-card__time-icon
+                    include ../../../assets/svg/alarm-plus.svg
+                span.event-card__time-text.body-small-bold
+        a(href="#").event-card__title.text-h4 Название мероприятия
+        div.event-card__menu 
+            ul.event-card__list
+                li.event-card__item 
+                    svg.event-card__item-icon  
+                        include ../../../assets/svg/clock.svg
+                    span.body 12:00 - 17:00
+                li.event-card__item 
+                    svg.event-card__item-icon  
+                        include ../../../assets/svg/map-pin.svg
+                    span.body ГУАП, Ленсовета 14, актовый зал
+                li.event-card__item 
+                    svg.event-card__item-icon  
+                        include ../../../assets/svg/users-group.svg
+                    span.body 500 человек
+
+    

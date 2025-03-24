@@ -17,6 +17,12 @@ task("copy", () => {
     return src("./src/public/**/*").pipe(dest("./build/public"));
 });
 
+task("images", () => {
+    return src("./src/assets/**/*", {encoding: false})
+        .pipe(dest("./build/assets"))
+        .pipe(browserSync.stream({once: true}));
+});
+
 task("clean", () => {
     return src("./build", {
         allowEmpty: true,
@@ -74,12 +80,14 @@ task("watch", () => {
     watch("./src/style/**/*.scss", series("style"));
     watch("./src/pug/views/**/*.pug", series("pug"));
     watch("./src/js/main.js", series("webpack"));
+    watch("./src/public/**/*", series("copy"));
+    watch("./src/assets/**/*", series("images"));
 });
 
 task(
     "serve",
     series(
         "clean",
-        parallel("copy", "style", "webpack", "pug", "watch", "server")
+        parallel("copy", "images", "style", "webpack", "pug", "watch", "server")
     )
 );

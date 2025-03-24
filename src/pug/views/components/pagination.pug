@@ -2,7 +2,7 @@ mixin pagination(currentPage, totalPage)
     div(class="paginations", id="js-pagination")
         button.btn.btn__square--rotate.pagination(data-page="prev", class=((currentPage === 1) ? 'pagination--disabled' : ""))
             svg.btn__square-icon
-                include ../../../public/svg/arrow-right.svg
+                include ../../../assets/svg/arrow-right.svg
         
         - var visiblePage = 2;
         - var startPage = (currentPage - visiblePage > 1) ? (currentPage - visiblePage) : 1;
@@ -23,4 +23,4 @@ mixin pagination(currentPage, totalPage)
         
         button(class="btn btn__square pagination", disabled=(currentPage === totalPage), data-page="next")
             svg.btn__square-icon
-                include ../../../public/svg/arrow-right.svg
+                include ../../../assets/svg/arrow-right.svg
