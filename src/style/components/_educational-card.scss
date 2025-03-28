@@ -1,20 +1,20 @@
 .educational-card{
     box-sizing: border-box;
     display: flex; 
-    width: 638px;
+    width: 63.8rem;
     max-width: 100%;
-    min-width: 350px;
+    min-width: 35rem;
     flex-direction: column;
-    gap: 32px;
-    padding: 16px;
-    border-radius: 40px;
+    gap: 3.2rem;
+    padding: 1.6rem;
+    border-radius: 4rem;
     background-color: var(--card-color);
 
     @include mobile{
-        padding: 12px;
-        gap: 20px;
-        border-radius: 32px;
-        width: 350px;
+        padding: 1.2rem;
+        gap: 2rem;
+        border-radius: 3.2rem;
+        width: 35rem;
     }
 
     &__top{
@@ -30,10 +30,10 @@
         font-size: 0;
         text-decoration: none;
         overflow: hidden;
-        border-radius: 28px;
+        border-radius: 2.8rem;
 
         @include mobile{
-            border-radius: 24px;
+            border-radius: 2.4rem;
         }
 
         &::after{
@@ -57,19 +57,19 @@
     &__tag{
         box-sizing: border-box;
         position: absolute;
-        top: 24px;
-        left: 24px;
+        top: 2.4rem;
+        left: 2.4rem;
         z-index: 100;
     }
 
     &__info{
         display: flex;
-        padding: 0 16px 16px 16px;
+        padding: 0 1.6rem 1.6rem 1.6rem;
         flex-direction: column;
-        gap: 24px;
+        gap: 2.4rem;
 
         @include mobile{
-            gap: 20px;
+            gap: 2rem;
             padding: 0 8px 8px 8px;
         }
     }

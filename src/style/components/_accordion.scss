@@ -1,24 +1,24 @@
 .accordion {
     box-sizing: border-box;
-    max-width: 940px;
+    max-width: 94rem;
     width: 100%;
-    padding: 32px 48px 32px 52px;
+    padding: 3.2rem 4.8rem 3.2rem 5.2rem;
     background-color: var(--card-color);
-    border-radius: 32px;
+    border-radius: 3.2rem;
 
     @include mobile {
-        padding: 24px 20px 24px 24px;
-        max-width: 350px;
+        padding: 2.4rem 2.0rem 2.4rem 2.4rem;
+        max-width: 35rem;
         .accordion__btn {
-            width: 32px;
-            height: 32px;
-            border-radius: 12px;
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 1.2rem;
 
             &::before,
             &::after{
-                width: 14px;
+                width: 1.4rem;
                 right: 7px;
-                top: 15px;
+                top: 1.5rem;
             }
         }
     }
@@ -39,13 +39,13 @@
 
     &__btn {
         position: relative;
-        border-radius: 16px;
+        border-radius: 1.6rem;
         margin-left: auto;
         align-items: center;
         justify-content: center;
         background-color: var(--gray-color-2);
-        width: 48px;
-        height: 48px;
+        width: 4.8rem;
+        height: 4.8rem;
         transition: background-color 0.2s;
         cursor: pointer;
 
@@ -53,12 +53,12 @@
         &::after {
             position: absolute;
             content: "";
-            width: 20px;
+            width: 2rem;
             height: 2px;
             border-radius: 3px;
             background-color: var(--ultramarine-default-color);
-            right: 14px;
-            top: 23px;
+            right: 1.4rem;
+            top: 2.3rem;
             transition: rotate 0.3s;
         }
 
@@ -116,7 +116,7 @@
 
     &__content-body {
         position: relative;
-        margin-top: 32px;
+        margin-top: 3.2rem;
         color: var(--text-contrast-secondary-color);
     }
 }

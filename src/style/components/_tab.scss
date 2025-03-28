@@ -1,6 +1,6 @@
 .tab{
-    padding: 12px 16px;
-    border-radius: 16px;
+    padding: 1.2rem 1.6rem;
+    border-radius: 1.6rem;
     color: var(--text-secondary-promo-color);
     background-color: var(--gray-color-6);
 
@@ -15,7 +15,7 @@
     }
 
     @include mobile{
-        padding: 8px 12px;
-        border-radius: 12px;
+        padding: 8px 1.2rem;
+        border-radius: 1.2rem;
     }
 }

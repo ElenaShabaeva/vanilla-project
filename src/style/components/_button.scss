@@ -2,21 +2,21 @@
     @include btn;
 
     &__color {
-        padding: 16px 24px;
+        padding: 1.6rem 2.4rem;
         background-color: var(--ultramarine-default-color);
         border: 1px solid var(--ultramarine-default-color);
         color: var(--text-contrast-color);
-        border-radius: 16px;
+        border-radius: 1.6rem;
 
         @include mobile {
-            padding: 13px 20px;
-            border-radius: 12px;
+            padding: 1.3rem 2rem;
+            border-radius: 1.2rem;
         }
 
         &:hover,
         &:active {
             @media (hover: hover) {
-                border-radius: 32px;
+                border-radius: 3.2rem;
             }
         }
 
@@ -35,8 +35,8 @@
                 
                 @include mobile {
                     display: block;
-                    width: 20px;
-                    height: 20px;
+                    width: 2rem;
+                    height: 2rem;
                     color: blue;
                 }
             }
@@ -76,21 +76,21 @@
     }
 
     &__border {
-        padding: 16px 24px;
+        padding: 1.6rem 2.4rem;
         background-color: transparent;
         border: 1px solid var(--ultramarine-default-color);
         color: var(--ultramarine-default-color);
-        border-radius: 16px;
+        border-radius: 1.6rem;
 
         @include mobile {
-            padding: 13px 20px;
-            border-radius: 12px;
+            padding: 1.3rem 2rem;
+            border-radius: 1.2rem;
         }
 
         &:hover {
             @media (hover: hover) {
                 background-color: var(--gray-color-2);
-                border-radius: 32px;
+                border-radius: 3.2rem;
             }
         }
 
@@ -109,38 +109,38 @@
         display: flex;
         align-items: center;
         color: var(--text-color);
-        gap: 32px;
+        gap: 3.2rem;
 
         @include mobile {
-            gap: 20px;
+            gap: 2rem;
         }
 
         &-icon {
-            width: 32px;
-            height: 32px;
+            width: 3.2rem;
+            height: 3.2rem;
             transition: transform 0.3s, color 0.3s;
 
             @include mobile {
-                width: 24px;
-                height: 24px;
+                width: 2.4rem;
+                height: 2.4rem;
             }
         }
 
         &-block {
             display: flex;
-            width: 56px;
-            height: 56px;
+            width: 5.6rem;
+            height: 5.6rem;
             background-color: var(--card-color);
             color: var(--ultramarine-default-color);
-            border-radius: 16px;
+            border-radius: 1.6rem;
             align-items: center;
             justify-content: center;
             transition: background-color 0.3s;
 
             @include mobile {
-                border-radius: 12px;
-                width: 40px;
-                height: 40px;
+                border-radius: 1.2rem;
+                width: 4rem;
+                height: 4rem;
             }
         }
 
@@ -176,20 +176,20 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        padding: 12px;
+        padding: 1.2rem;
         transition: background-color 0.3s, color 0.3s;
 
         &-icon {
             color: var(--text-secondary-promo-color);
-            width: 16px;
-            height: 16px;
+            width: 1.6rem;
+            height: 1.6rem;
             transition: color 0.3s;
         }
 
         &:hover {
             @media (hover: hover) {
                 background-color: var(--gray-color-4);
-                border-radius: 12px;
+                border-radius: 1.2rem;
 
                 .btn__menu-icon {
                     color: var(--text-color);
@@ -207,7 +207,7 @@
 
         @include mobile {
             background-color: var(--gray-color-4);
-            border-radius: 12px;
+            border-radius: 1.2rem;
         }
     }
 
@@ -259,18 +259,18 @@
         }
 
         &-video {
-            padding: 16px;
-            width: 56px;
-            height: 56px;
+            padding: 1.6rem;
+            width: 5.6rem;
+            height: 5.6rem;
 
             .btn__square-icon {
-                width: 24px;
-                height: 24px;
+                width: 2.4rem;
+                height: 2.4rem;
             }
 
             @include mobile {
-                width: 48px;
-                height: 48px;
+                width: 4.8rem;
+                height: 4.8rem;
             }
         }
 
@@ -289,8 +289,8 @@
         transition: color 0.2s;
 
         &-icon {
-            width: 24px;
-            height: 24px;
+            width: 2.4rem;
+            height: 2.4rem;
         }
 
         &:hover {

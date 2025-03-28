@@ -6,8 +6,8 @@
 
     
     &__icon{
-        width: 20px;
-        height: 20px;
+        width: 2rem;
+        height: 2rem;
         color: var(--ultramarine-default-color);
     }
     
@@ -31,13 +31,13 @@
 
     &--m{
         .link__icon{
-            width: 24px;
-            height: 24px;
+            width: 2.4rem;
+            height: 2.4rem;
         }
     }
 
     &__social{
-        gap: 12px;
+        gap: 1.2rem;
 
         &:hover{
             @media(hover: hover){
@@ -49,8 +49,8 @@
             color: var(--ultramarine-dark-color);
         }
         &-icon{
-            width: 24px;
-            height: 24px;
+            width: 2.4rem;
+            height: 2.4rem;
         }
     }
 }

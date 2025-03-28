@@ -1,12 +1,12 @@
 .graduate-card {
     position: relative;
     box-sizing: border-box;
-    width: 440px;
+    width: 44rem;
     max-width: 100%;
 
     @include mobile {
-        border-radius: 32px;
-        width: 335px;
+        border-radius: 3.2rem;
+        width: 33.5rem;
     }
 
     &__picture {
@@ -16,10 +16,10 @@
         font-size: 0;
         text-decoration: none;
         overflow: hidden;
-        border-radius: 28px;
+        border-radius: 2.8rem;
 
         @include mobile {
-            border-radius: 24px;
+            border-radius: 2.4rem;
         }
 
         &::after {
@@ -48,12 +48,12 @@
         position: absolute;
         align-items: center;
         text-align: center;
-        bottom: 16px;
-        left: 16px;
-        right: 16px;
+        bottom: 1.6rem;
+        left: 1.6rem;
+        right: 1.6rem;
         background-color: var(--card-color);
-        padding: 20px;
-        border-radius: 28px;
+        padding: 2rem;
+        border-radius: 2.8rem;
     }
 
     &__content {
@@ -65,20 +65,20 @@
             max-height 0.3s ease;
 
         @include mobile {
-            margin-top: 16px;
+            margin-top: 1.6rem;
             visibility: visible;
             opacity: 1;
-            max-height: 72px;
+            max-height: 7.2rem;
         }
     }
 
     &:hover {
         @media (hover: hover) {
             .graduate-card__content {
-                margin-top: 20px;
+                margin-top: 2rem;
                 visibility: visible;
                 opacity: 1;
-                max-height: 80px;
+                max-height: 8rem;
             }
         }
     }
