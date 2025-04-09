@@ -115,6 +115,12 @@
 
     .table{
         overflow-x: auto;
+        max-width: 90rem;
+        width: 100%;
+
+        @include mobile{
+            max-width: 74rem;
+        }
     }
 
     table {
@@ -122,7 +128,6 @@
         border-collapse: collapse;
         border-radius: 3.2rem;
         background-color: var(--card-color);
-        max-width: 90rem;
         width: 100%;
     }
 
@@ -130,15 +135,23 @@
         background-color: var(--ultramarine-light-color-1-O);
         color: var(--text-contrast-color);
         height: 9.6rem;
+
+        @include mobile{
+            height: 5rem;
+        }
     }
 
     thead th {
         box-sizing: border-box;
-        padding: 10px;
+        padding: 1rem;
         border-right: 1px solid var(--ultramarine-dark-color);
         width: calc(25%);
-        padding: 24px;
+        padding: 2.4rem;
         text-align: left;
+
+        @include mobile{
+            padding: 1.6rem;
+        }
 
         &:first-child {
             border-top-left-radius: 3.2rem;
@@ -152,10 +165,15 @@
 
     tbody td {
         box-sizing: border-box;
-        padding: 24px;
+        padding: 2.4rem;
         border: 1px solid var(--divider-color);
         align-items: flex-start;
         vertical-align: text-top;
+
+        @include mobile{
+            padding: 1.6rem;
+            width: 100%;
+        }
 
         &:last-child {
             border-right: none;

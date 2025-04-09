@@ -1,0 +1,18 @@
+.tabs{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+    &__buttons{
+        display: flex;
+        gap: 1.6rem;
+    }
+
+    &__content{
+        display: none;
+
+        &--active{
+            display: block;
+        }
+    }
+}
