@@ -19,6 +19,7 @@ body{
     background-color: var(--app-bg);
     color: var(--text-color);
     user-select: none;
+    overflow-x: hidden;
 }
 
 a{
