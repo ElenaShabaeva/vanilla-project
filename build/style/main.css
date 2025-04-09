@@ -335,9 +335,15 @@ a {
   outline: none;
 }
 
-ul {
+ul,
+ol {
   padding: 0;
+  margin: 0;
   list-style: none;
+}
+
+p {
+  margin: 0;
 }
 
 html {
@@ -368,6 +374,7 @@ html {
   --ultramarine-default-color: #5747FF;
   --ultramarine-dark-color: #4132DC;
   --ultramarine-light-color-1: #6E61FF;
+  --ultramarine-light-color-1-O: rgba(110, 97, 255, 1);
   --ultramarine-light-color-2: #EDECFF;
   --suai-blue-default-color: #0087FF;
   --suai-blue-light-color: #EDF7FF;
@@ -470,6 +477,166 @@ html {
   font-size: 1.2rem;
   line-height: 1.6rem;
   font-weight: 500;
+}
+
+.text-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.text-content__p, .text-content__mark-list, .text-content__num-list {
+  padding-block: 2.4rem;
+}
+.text-content__link {
+  color: var(--ultramarine-default-color);
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.text-content__mark-list, .text-content__inner-list, .text-content__num-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.6rem;
+}
+.text-content__mark-list > li {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding-left: 5.2rem;
+}
+.text-content__mark-list > li::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--ultramarine-default-color);
+  pointer-events: none;
+}
+.text-content__inner-list {
+  margin-top: 1.6rem;
+}
+.text-content__inner-list > li {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding-left: 4rem;
+}
+.text-content__inner-list > li::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 4px;
+  width: 1.6rem;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--ultramarine-default-color);
+  pointer-events: none;
+}
+.text-content__num-list {
+  counter-reset: li;
+}
+.text-content__num-list > li {
+  counter-increment: li;
+}
+.text-content__num-list > li::before {
+  content: counter(li) ". ";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  min-width: 4rem;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-right: 1.2rem;
+  white-space: pre;
+}
+.text-content .table,
+.text-content .image {
+  margin: 0;
+  padding-block: 5.6rem;
+}
+.text-content table {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-collapse: collapse;
+  border-radius: 3.2rem;
+  background-color: var(--card-color);
+  max-width: 90rem;
+  width: 100%;
+}
+.text-content thead {
+  background-color: var(--ultramarine-light-color-1-O);
+  color: var(--text-contrast-color);
+  height: 9.6rem;
+}
+.text-content thead th {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  border-right: 1px solid var(--ultramarine-dark-color);
+  width: 25%;
+  padding: 24px;
+  text-align: left;
+}
+.text-content thead th:first-child {
+  border-top-left-radius: 3.2rem;
+}
+.text-content thead th:last-child {
+  border-right: none;
+  border-top-right-radius: 3.2rem;
+}
+.text-content tbody td {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 24px;
+  border: 1px solid var(--divider-color);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  vertical-align: text-top;
+}
+.text-content tbody td:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+.text-content figure {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 90rem;
+  min-width: 35rem;
+  width: 100%;
+}
+.text-content figure img {
+  border-radius: 3.2rem;
+  margin: 0 0 1.6rem 0;
+  display: block;
+  width: 100%;
+}
+.text-content figure figcaption {
+  color: var(--text-secondary-promo-color);
+}
+.text-content h2,
+.text-content h3 {
+  margin: 0;
+}
+.text-content h2 {
+  padding-top: 5.6rem;
+  padding-bottom: 4rem;
+}
+.text-content h3 {
+  padding-top: 4rem;
+  padding-bottom: 2.4rem;
 }
 
 .btn {
@@ -1010,7 +1177,7 @@ html {
           flex-direction: column;
   gap: 2.4rem;
   padding: 1.6rem;
-  border-radius: 40px;
+  border-radius: 4rem;
   background-color: var(--card-color);
 }
 .event-card__top {
@@ -1376,6 +1543,11 @@ html {
   -webkit-transition: opacity 0.3s ease, visibility 0.3s ease, max-height 0.3s ease;
   transition: opacity 0.3s ease, visibility 0.3s ease, max-height 0.3s ease;
 }
+@media screen and (max-width: 767px){
+  html {
+    font-size: calc(10px + 13 * (100vw - 375px) / 447);
+  }
+}
 @media (max-width: 767px){
   .text-h1 {
     font-size: 3.2rem;
@@ -1420,6 +1592,29 @@ html {
   .caption {
     font-size: 1rem;
     line-height: 1.2rem;
+  }
+  .text-content__p, .text-content__mark-list, .text-content__num-list {
+    padding-block: 1.6rem;
+  }
+  .text-content__mark-list > li {
+    padding-left: 4.4rem;
+  }
+  .text-content__inner-list > li {
+    padding-left: 3.2rem;
+  }
+  .text-content__num-list > li::before {
+    margin-right: 8px;
+  }
+  .text-content .table,
+  .text-content .image {
+    padding-block: 4.8rem;
+  }
+  .text-content figure img {
+    margin-bottom: 1.2rem;
+  }
+  .text-content h2 {
+    padding-top: 4.8rem;
+    padding-bottom: 3.2rem;
   }
   .btn__color {
     padding: 1.3rem 2rem;
@@ -1551,7 +1746,7 @@ html {
     width: 35rem;
   }
   .news-card__picture {
-    border-radius: 24px;
+    border-radius: 2.4rem;
   }
   .news-card__title {
     margin-bottom: 2rem;
@@ -1586,7 +1781,20 @@ html {
     max-height: 7.2rem;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  html {
+    font-size: calc(10px + 4 * (100vw - 768px) / 255);
+  }
+}
+@media (min-width: 1024px){
+  html {
+    font-size: calc(8px + 2 * (100vw - 1024px) / 416);
+  }
+}
 @media (hover: hover){
+  .text-content__link:hover {
+    color: var(--ultramarine-light-color-1);
+  }
   .btn__color:hover, .btn__color:active {
     border-radius: 3.2rem;
   }

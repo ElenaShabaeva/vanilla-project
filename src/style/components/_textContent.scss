@@ -1,0 +1,203 @@
+.text-content {
+    display: flex;
+    flex-direction: column;
+
+    &__p,
+    &__mark-list,
+    &__num-list {
+        padding-block: 2.4rem;
+
+        @include mobile {
+            padding-block: 1.6rem;
+        }
+    }
+
+    &__link {
+        color: var(--ultramarine-default-color);
+        transition: color 0.3s;
+
+        &:hover {
+            @media (hover: hover) {
+                color: var(--ultramarine-light-color-1);
+            }
+        }
+    }
+
+    &__mark-list,
+    &__inner-list,
+    &__num-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+
+    &__mark-list > li {
+        box-sizing: border-box;
+        position: relative;
+        padding-left: 5.2rem;
+
+        @include mobile {
+            padding-left: 4.4rem;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--ultramarine-default-color);
+            pointer-events: none;
+        }
+    }
+
+    &__inner-list {
+        margin-top: 1.6rem;
+    }
+
+    &__inner-list > li {
+        box-sizing: border-box;
+        position: relative;
+        padding-left: 4rem;
+
+        @include mobile {
+            padding-left: 3.2rem;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 1rem;
+            left: 4px;
+            width: 1.6rem;
+            height: 2px;
+            border-radius: 2px;
+            background-color: var(--ultramarine-default-color);
+            pointer-events: none;
+        }
+    }
+
+    &__num-list {
+        counter-reset: li;
+    }
+
+    &__num-list > li {
+        counter-increment: li;
+
+        &::before {
+            content: counter(li) ". ";
+            box-sizing: border-box;
+            display: inline-block;
+            min-width: 4rem;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1.8rem;
+            margin-right: 1.2rem;
+            white-space: pre;
+
+            @include mobile {
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .table,
+    .image {
+        margin: 0;
+        padding-block: 5.6rem;
+
+        @include mobile {
+            padding-block: 4.8rem;
+        }
+    }
+
+    table {
+        box-sizing: border-box;
+        border-collapse: collapse;
+        border-radius: 3.2rem;
+        background-color: var(--card-color);
+        max-width: 90rem;
+        width: 100%;
+    }
+
+    thead {
+        background-color: var(--ultramarine-light-color-1-O);
+        color: var(--text-contrast-color);
+        height: 9.6rem;
+    }
+
+    thead th {
+        box-sizing: border-box;
+        padding: 10px;
+        border-right: 1px solid var(--ultramarine-dark-color);
+        width: calc(25%);
+        padding: 24px;
+        text-align: left;
+
+        &:first-child {
+            border-top-left-radius: 3.2rem;
+        }
+
+        &:last-child {
+            border-right: none;
+            border-top-right-radius: 3.2rem;
+        }
+    }
+
+    tbody td {
+        box-sizing: border-box;
+        padding: 24px;
+        border: 1px solid var(--divider-color);
+        align-items: flex-start;
+        vertical-align: text-top;
+
+        &:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+    }
+
+    figure {
+        box-sizing: border-box;
+        max-width: 90rem;
+        min-width: 35rem;
+        width: 100%;
+
+        img {
+            border-radius: 3.2rem;
+            margin: 0 0 1.6rem 0;
+            display: block;
+            width: 100%;
+
+            @include mobile {
+                margin-bottom: 1.2rem;
+            }
+        }
+
+        figcaption {
+            color: var(--text-secondary-promo-color);
+        }
+    }
+
+    h2,
+    h3 {
+        margin: 0;
+    }
+
+    h2 {
+        padding-top: 5.6rem;
+        padding-bottom: 4rem;
+
+        @include mobile {
+            padding-top: 4.8rem;
+            padding-bottom: 3.2rem;
+        }
+    }
+
+    h3 {
+        padding-top: 4rem;
+        padding-bottom: 2.4rem;
+    }
+}
