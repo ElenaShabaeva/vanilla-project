@@ -1,0 +1,99 @@
+.select {
+    display: flex;
+    flex-direction: column;
+    max-width: 36rem;
+    width: 100%;
+    cursor: pointer;
+
+    @include mobile{
+      max-width: 35rem;
+    }
+
+    &--disabled {
+        pointer-events: none;
+        .select__top {
+            background-color: var(--gray-color-3);
+            border: 1px solid var(--border-color);
+        }
+        .select__title,
+        .select__icon,
+        .select__caption {
+            color: var(--text-blind-color);
+        }
+    }
+
+    &__top {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--gray-color-4);
+        padding: 1.8rem 1.6rem;
+        border: 1px solid transparent;
+        border-radius: 1.2rem;
+        transition: border 0.3s;
+
+        @include mobile{
+          padding: 1.8rem 1.2rem;
+        }
+
+        &--active {
+            border: 1px solid var(--ultramarine-light-color-1);
+            .select__title {
+                color: var(--text-color);
+            }
+            .select__icon {
+                transform: rotate(180deg);
+            }
+        }
+
+        &:hover {
+            @media (hover: hover) {
+                border: 1px solid var(--ultramarine-light-color-1);
+            }
+        }
+    }
+
+    &__title,
+    &__icon {
+        color: var(--text-secondary-promo-color);
+    }
+
+    &__icon {
+        display: flex;
+        width: 2rem;
+        height: 2rem;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s;
+    }
+
+    &__caption {
+        color: var(--text-secondary-promo-color);
+        margin-top: 4px;
+
+        &--none {
+            display: none;
+        }
+    }
+
+    &__menu {
+        display: none;
+
+        &--active {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 8px;
+            margin-top: 8px;
+            background-color: var(--card-color);
+            border-radius: 1.2rem;
+        }
+    }
+
+    &__item {
+        padding: 8px 1.2rem;
+        display: flex;
+    }
+}

@@ -347,6 +347,21 @@ p {
   margin: 0;
 }
 
+.is-hidden {
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(100%) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 html {
   --card-color: #ffffff;
   --white20: rgba(255, 255, 255, 0.2);
@@ -665,6 +680,85 @@ html {
 }
 .tabs__content--active {
   display: block;
+}
+
+.check {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  min-height: 2.4rem;
+  width: 100%;
+  padding: 8px 1.2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: var(--text-color);
+  background-color: transparent;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.check__input {
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(100%) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+.check__input:checked ~ .check__mark {
+  background-color: var(--ultramarine-default-color);
+  border-color: var(--ultramarine-default-color);
+}
+.check__input:checked ~ .check__mark::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 6.5px;
+  top: 1.5px;
+  width: 4px;
+  height: 1.1rem;
+  background-color: transparent;
+  border-bottom: 2px solid var(--text-contrast-color);
+  border-right: 2px solid var(--text-contrast-color);
+  border-radius: 1px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.check__mark {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  left: 1.2rem;
+  top: 8px;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  border-radius: 6px;
+}
+.check__label {
+  margin-left: 3.2rem;
 }
 
 .btn {
@@ -1571,6 +1665,113 @@ html {
   -webkit-transition: opacity 0.3s ease, visibility 0.3s ease, max-height 0.3s ease;
   transition: opacity 0.3s ease, visibility 0.3s ease, max-height 0.3s ease;
 }
+
+.select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 36rem;
+  width: 100%;
+  cursor: pointer;
+}
+.select--disabled {
+  pointer-events: none;
+}
+.select--disabled .select__top {
+  background-color: var(--gray-color-3);
+  border: 1px solid var(--border-color);
+}
+.select--disabled .select__title,
+.select--disabled .select__icon,
+.select--disabled .select__caption {
+  color: var(--text-blind-color);
+}
+.select__top {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--gray-color-4);
+  padding: 1.8rem 1.6rem;
+  border: 1px solid transparent;
+  border-radius: 1.2rem;
+  -webkit-transition: border 0.3s;
+  transition: border 0.3s;
+}
+.select__top--active {
+  border: 1px solid var(--ultramarine-light-color-1);
+}
+.select__top--active .select__title {
+  color: var(--text-color);
+}
+.select__top--active .select__icon {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.select__title, .select__icon {
+  color: var(--text-secondary-promo-color);
+}
+.select__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.select__caption {
+  color: var(--text-secondary-promo-color);
+  margin-top: 4px;
+}
+.select__caption--none {
+  display: none;
+}
+.select__menu {
+  display: none;
+}
+.select__menu--active {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  margin-top: 8px;
+  background-color: var(--card-color);
+  border-radius: 1.2rem;
+}
+.select__item {
+  padding: 8px 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 @media screen and (max-width: 767px){
   html {
     font-size: calc(10px + 13 * (100vw - 375px) / 447);
@@ -1643,6 +1844,9 @@ html {
   .text-content thead {
     height: 5rem;
   }
+  .text-content thead th {
+    padding: 1.6rem;
+  }
   .text-content tbody td {
     padding: 1.6rem;
     width: 100%;
@@ -1653,6 +1857,13 @@ html {
   .text-content h2 {
     padding-top: 4.8rem;
     padding-bottom: 3.2rem;
+  }
+  .check__mark {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  .check__label {
+    margin-left: 2.4rem;
   }
   .btn__color {
     padding: 1.3rem 2rem;
@@ -1818,6 +2029,12 @@ html {
     opacity: 1;
     max-height: 7.2rem;
   }
+  .select {
+    max-width: 35rem;
+  }
+  .select__top {
+    padding: 1.8rem 1.2rem;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
   html {
@@ -1832,6 +2049,10 @@ html {
 @media (hover: hover){
   .text-content__link:hover {
     color: var(--ultramarine-light-color-1);
+  }
+  .check:hover {
+    background-color: var(--gray-color-1);
+    border-radius: 8px;
   }
   .btn__color:hover, .btn__color:active {
     border-radius: 3.2rem;
@@ -1899,5 +2120,8 @@ html {
     visibility: visible;
     opacity: 1;
     max-height: 8rem;
+  }
+  .select__top:hover {
+    border: 1px solid var(--ultramarine-light-color-1);
   }
 }

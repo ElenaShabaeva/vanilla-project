@@ -1,0 +1,86 @@
+.check {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 2.4rem;
+    width: 100%;
+    padding: 8px 1.2rem;
+    justify-content: center;
+    color: var(--text-color);
+    background-color: transparent;
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+    &:hover{
+        @media(hover: hover){
+            background-color: var(--gray-color-1);
+            border-radius: 8px;
+        }
+    }
+
+    &__input {
+        position: absolute !important;
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        clip: rect(0 0 0 0) !important;
+        clip-path: inset(100%) !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        
+        &:checked {
+            & ~ .check__mark {
+                background-color: var(--ultramarine-default-color);
+                border-color: var(--ultramarine-default-color);
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 6.5px;
+                    top: 1.5px;
+                    width: 4px;
+                    height: 1.1rem;
+                    background-color: transparent;
+                    border-bottom: 2px solid var(--text-contrast-color);
+                    border-right: 2px solid var(--text-contrast-color);
+                    border-radius: 1px;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+
+    &__mark {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        left: 1.2rem;
+        top: 8px;
+        width: 2rem;
+        height: 2rem;
+        background-color: transparent;
+        border: 1px solid var(--border-color);
+        transition: background-color 0.2s;
+        border-radius: 6px;
+
+        @include mobile{
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+    }
+
+    &__label {
+        margin-left: 3.2rem;
+
+        @include mobile{
+            margin-left: 2.4rem;
+        }
+    }
+}
