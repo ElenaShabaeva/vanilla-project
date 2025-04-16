@@ -453,7 +453,7 @@ html {
   font-weight: 500;
 }
 
-.tab {
+.text-tab {
   font-family: var(--Onest);
   font-size: 1.8rem;
   line-height: 2.4rem;
@@ -674,6 +674,8 @@ html {
   display: -ms-flexbox;
   display: flex;
   gap: 1.6rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .tabs__content {
   display: none;
@@ -1858,9 +1860,16 @@ html {
     padding-top: 4.8rem;
     padding-bottom: 3.2rem;
   }
+  .check__input:checked ~ .check__mark::after {
+    width: 2px;
+    height: 6px;
+    left: 2.7px;
+    top: 0;
+  }
   .check__mark {
     width: 1.6rem;
     height: 1.6rem;
+    border-radius: 4px;
   }
   .check__label {
     margin-left: 2.4rem;

@@ -52,6 +52,13 @@
                     border-right: 2px solid var(--text-contrast-color);
                     border-radius: 1px;
                     transform: rotate(45deg);
+
+                    @include mobile{
+                        width: 2px;
+                        height: 6px;
+                        left: 2.7px;
+                        top: 0;
+                    }
                 }
             }
         }
@@ -73,6 +80,7 @@
         @include mobile{
             width: 1.6rem;
             height: 1.6rem;
+            border-radius: 4px;
         }
     }
 

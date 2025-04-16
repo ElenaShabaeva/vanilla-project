@@ -23,4 +23,21 @@ body
       include components/graduate-card.pug
       include components/select.pug
 
+      div.tabs(js-tabs)
+            header.tabs__header 
+                div.tabs__buttons
+                    button(class="tab tab--active btn text-tab" type="button" id="js-tab-1" aria-control="tabpanel-1" js-tabs-button aria-selected="true" tabIndex="-1") Все
+                    button(class="tab btn text-tab" type="button" id="js-tab-2" aria-control="tabpanel-2" js-tabs-button aria-selected="false" tabIndex="-1") Сотрудничество
+                    button(class="tab btn text-tab" type="button" id="js-tab-3" aria-control="tabpanel-3" js-tabs-button aria-selected="false" tabIndex="-1") Студенты
+                    button(class="tab btn text-tab" type="button" id="js-tab-4" aria-control="tabpanel-4" js-tabs-button aria-selected="false" tabIndex="-1") Проекты
+            dib.tabs__body
+                div.tabs__content.tabs__content--active(id="tabpanel-1" js-tabs-content)
+                    span.body Все 
+                div.tabs__content(id="tabpanel-2" js-tabs-content)
+                    span.body Сотрудничество
+                div.tabs__content(id="tabpanel-3" js-tabs-content)
+                    span.body Студенчество 
+                div.tabs__content(id="tabpanel-4" js-tabs-content)
+                    span.body Проекты 
+
     script(src="./js/app.min.js")
