@@ -1,0 +1,13 @@
+doctype html
+html
+head
+  block head
+  title #{title}
+body
+  header.header
+    block header
+  main.main
+    block content
+  footer.footer
+    block footer
+  script(src="./js/app.min.js")

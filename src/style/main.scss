@@ -1,14 +1,22 @@
 @use "global/normalize.css";
 
-@import "global/base";
-@import "global/colors";
 @import "global/breakpoints";
+@import "global/colors";
 @import "utils/typography";
 @import "global/typography";
 @import "utils/button";
+@import "utils/container";
+@import "utils/hidden";
+
+@import "global/base";
+
 
 @import "components/textContent";
 @import "components/tabsPage";
+
+@import "components/header";
+@import "components/main";
+@import "components/footer";
 
 @import "components/check";
 @import "components/button";

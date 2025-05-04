@@ -1,0 +1,117 @@
+<header class="page-header">
+    <div class="page-header__container">
+        <a href="#" class="page-header__logo">
+            <svg class="page-header__logo-icon" width="202" height="147">
+                <use xlink:href="assets/icons/symbols.svg#logo"></use>
+            </svg>
+        </a>
+
+        <nav class="page-header__nav">
+            <a href="#" class="page-header__nav-link">Мероприятия</a>
+            <a href="#" class="page-header__nav-link">Блок</a>
+            <a href="#" class="page-header__nav-link">О нас</a>
+            <a href="#" class="page-header__nav-link">Контакты</a>
+
+            <a href="#" class="page-header__nav-user-link">
+                Александр С.
+                <svg class="page-header__user-icon" width="24" height="24">
+                    <use xlink:href="assets/icons/symbols.svg#log-out-door"></use>
+                </svg>
+            </a>
+        </nav>
+
+        <div class="page-header__right-block">
+            <a href="#" class="page-header__user-btn btn">
+                Войти
+                <svg class="page-header__user-icon" width="21" height="18">
+                    <use xlink:href="assets/icons/symbols.svg#user"></use>
+                </svg>
+            </a>
+            <button type="button" class="page-header__nav-toggle" id="js-navToggle"></button>
+        </div>
+    </div>
+</header>
+
+
+ &__nav-toggle {
+        display: none;
+        cursor: pointer;
+
+        @media @bw1020 {
+            display: block;
+            position: relative;
+            right: -11px;
+            margin-left: 18px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: none;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 19px;
+            left: 11px;
+            width: 18px;
+            height: 2px;
+            border-radius: 2px;
+            background-color: @black;
+            transform-origin: 50% 50%;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        &::before {
+            top: 13px;
+            box-shadow: 0 6px 0 @black;
+        }
+
+        &::after {
+            top: 25px;
+        }
+    }
+
+
+
+div.header__container
+    div.header__left-block
+        a(href="#").header__logo
+            include ../../../../assets/svg/logo.svg
+        nav.header__nav 
+            div.header__dropdown-container
+                a(href="#").header__link.header__link--dropdown.button О платформе 
+                    include ../../../../assets/svg/arrow-down.svg
+                div.header__dropdown-content
+                    a(href="#").header__dropdown-link.button Университет
+                    a(href="#").header__dropdown-link.button Точка кипения
+            a(href="#").header__link.button Мероприятия
+            a(href="#").header__link.button Новости
+            a(href="#").header__link.button Образовательные материалы
+            a(href="#").header__link.button Вопросы
+            a(href="#").header__link.button Контакты
+    nav.header__mobile-nav 
+        a(href="#").header__mobile-link.header__mobile-link--icon.button Личный кабинет 
+            include ../../../../assets/svg/user.svg
+        a(href="#").header__mobile-link.button Университет
+        a(href="#").header__mobile-link.button Точка кипения
+        a(href="#").header__mobile-link.button Новости
+        a(href="#").header__mobile-link.button Образовательные материалы
+        a(href="#").header__mobile-link.button Вопросы
+        a(href="#").header__mobile-link.button Контакты
+
+    div.header__right-block
+        div.header__desk-btn
+            button(type="button").header__btn
+                include ../../../../assets/svg/user.svg
+        button(type="button" id="js-header-toggle").header__btn-toggle
+
+
+
+
+
+
+
+
+

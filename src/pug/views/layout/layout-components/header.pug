@@ -1,0 +1,38 @@
+div.header__container
+    div.header__left-block
+        a(href="#").header__logo
+            include ../../../../assets/svg/logo.svg
+        nav.header__nav 
+            div.header__dropdown-container
+                a(href="#").header__link.header__link--dropdown.button О платформе 
+                    include ../../../../assets/svg/arrow-down.svg
+                div.header__dropdown-content
+                    a(href="#").header__dropdown-link.button Университет
+                    a(href="#").header__dropdown-link.button Точка кипения
+            a(href="#").header__link.button Мероприятия
+            a(href="#").header__link.button Новости
+            a(href="#").header__link.button Образовательные материалы
+            a(href="#").header__link.button Вопросы
+            a(href="#").header__link.button Контакты
+    nav.header__mobile-nav 
+        a(href="#").header__mobile-link.header__mobile-link--icon.button Личный кабинет 
+            include ../../../../assets/svg/user.svg
+        a(href="#").header__mobile-link.button Университет
+        a(href="#").header__mobile-link.button Точка кипения
+        a(href="#").header__mobile-link.button Новости
+        a(href="#").header__mobile-link.button Образовательные материалы
+        a(href="#").header__mobile-link.button Вопросы
+        a(href="#").header__mobile-link.button Контакты
+
+    div.header__right-block
+        div.header__desk-btn
+            button(type="button").header__btn
+                include ../../../../assets/svg/user.svg
+        button(type="button" id="js-header-toggle").header__btn-toggle
+
+
+
+
+
+
+

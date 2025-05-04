@@ -1,0 +1,157 @@
+.footer {
+    &__container {
+        @include container;
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+
+        @include mobile {
+            gap: 2.4rem;
+            padding-inline: 1rem;
+        }
+    }
+
+    &__logo {
+        @include mobile {
+            svg {
+                width: 9rem;
+                height: 2.7rem;
+            }
+        }
+    }
+
+    &__top {
+        display: flex;
+        gap: 4rem;
+        background-color: var(--card-color);
+        border-radius: 3.2rem;
+        padding: 3.2rem;
+
+        @include mobile {
+            flex-direction: column;
+            gap: 3.2rem;
+            padding: 2.4rem;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        gap: 20.8rem;
+        align-items: center;
+
+        @include mobile {
+            flex-direction: column;
+            gap: 1.6rem;
+            align-items: flex-start;
+        }
+    }
+
+    &__nav-block,
+    &__nav-socials {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+
+        svg {
+            width: 2.4rem;
+            height: 2.4rem;
+
+            transition: color 0.3s;
+        }
+    }
+
+    &__nav-block {
+        @include mobile {
+            flex-direction: column;
+            gap: 1.6rem;
+            align-items: flex-start;
+        }
+    }
+
+    &__nav-socials {
+        @include mobile {
+            display: flex;
+            gap: 1.2rem;
+        }
+    }
+
+    &__link,
+    &__icon {
+        transition: color 0.3s;
+
+        &:hover {
+            @media (hover: hover) {
+                color: var(--ultramarine-default-color);
+            }
+        }
+    }
+
+    &__link {
+        transition: color 0.3s;
+
+        &:hover {
+            @media (hover: hover) {
+                color: var(--ultramarine-default-color);
+            }
+        }
+
+        &--icon {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        &--iconreverse {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        color: var(--text-secondary-promo-color);
+        padding-bottom: 2.4rem;
+
+        @include mobile{
+            svg{
+                width: 7.5rem;
+                height: 1.6rem;
+            }
+        }
+    }
+
+    &__dropdown-container {
+        position: relative;
+        &:hover,
+        &:active {
+            .footer__dropdown-content {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .footer__link--dropdown {
+                transition: color 0.3s;
+
+                svg {
+                    color: var(--text-secondary-promo-color);
+                }
+            }
+        }
+    }
+
+    &__dropdown-content {
+        position: absolute;
+        left: 0;
+        bottom: 4rem;
+        display: flex;
+        visibility: hidden;
+        opacity: 0;
+        flex-direction: column;
+        width: 21rem;
+        gap: 4px;
+        padding: 8px;
+        background-color: var(--card-color);
+        border-radius: 1.2rem;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+}
